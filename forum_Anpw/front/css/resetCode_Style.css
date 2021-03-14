@@ -1,0 +1,14 @@
+/*中间的过度的横线*/
+.link-top {
+    width: 50%;
+    height: 1px;
+    border-top: solid #ACC0D8 1px;
+}
+
+/*画一条再右边的竖线*/
+.link-right {
+    width: 50px;
+    height: 20%;
+    border-right: solid #ACC0D8 1px;
+}
+

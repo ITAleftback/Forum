@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>By:Anpw</title>
+    <link rel="stylesheet" href="css/user_Style.css">
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js"></script>
+    <style>
+        body{
+            background-color: white;
+        }
+    </style>
+
+</head>
+<body onload="hide()">
+
+<ul class="layui-nav">
+    <li class="layui-nav-item">
+        <a href="">-------By:Anpw-------</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">主页</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="../essay_Write.html">发布文章</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="../essay_Update.html">修改文章</a>
+    </li>
+
+    <li class="layui-nav-item" lay-unselect="">
+        <a href="javascript:"><img src="//t.cn/RCzsdCq" class="layui-nav-img" alt=""><span id="username"></span></a>
+        <dl class="layui-nav-child">
+            <dd><a href="../resetCode.html">修改密码</a></dd>
+            <dd><a href="../sequrityManagement.html" id="sequrity">安全管理</a></dd>
+            <dd><a href="index.html" id="quit">退出</a></dd>
+        </dl>
+    </li>
+</ul>
+
+<table id="demo" lay-filter="test"></table>
+<script>
+    function hide(){
+        var admin=sessionStorage.getItem("admin")
+        if (admin==="1"){
+            $(".layui-btn-container #essay-edit").show()
+            $(".layui-btn-container #essay-del").show()
+        }
+    }
+</script>
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <a id="essay-view" class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+        <a id="essay-edit" style="display: none;"  class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a id="essay-del" style="display: none;" class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </div>
+</script>
+
+<script src="js/index.js"></script>
+<script src="js/essay_View.js"></script>
+</body>
+</html>

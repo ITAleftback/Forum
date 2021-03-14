@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>By: Anpw</title>
+    <link rel="stylesheet" href="css/user_Style.css">
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+<div class="show-login-btn">
+    -> 登录
+</div>
+
+<div class="show-register-btn">
+    -> 注册
+</div>
+
+<div class="show-reset-btn">
+    -> 忘记密码？
+</div>
+
+
+<div class="login-box">
+    <div class="hide-login-btn">
+        +
+    </div>
+    <form class="login-form">
+        <h1>Welcome</h1>
+        <label>
+            <input id="login-username" class="txtb" type="text" name="" placeholder="用户名"/>
+        </label>
+        <label>
+            <input id="login-password" class="txtb" type="password" name="" placeholder="密码"/>
+        </label>
+        <button id="login-btn" class="login-btn" type="button">登录</button>
+    </form>
+</div>
+
+
+<div class="register-box">
+    <div class="hide-register-btn">
+        +
+    </div>
+    <form class="register-form">
+        <h1>Welcome</h1>
+        <label>
+            <input id="register-username" class="txtb" type="text" name="" placeholder="用户名"/>
+        </label>
+        <label>
+            <input id="register-password" class="txtb" type="password" name="" placeholder="密码不能少于6位"/>
+        </label>
+        <label>
+            <input id="register-securitycode" class="txtb" type="text" name="" placeholder="安全码"/>
+        </label>
+        <button id="register-btn" class="register-btn" type="button">注册</button>
+
+
+    </form>
+</div>
+
+
+<div class="reset-box">
+    <div class="hide-reset-btn">
+        +
+    </div>
+    <form class="reset-form">
+        <h1>Welcome</h1>
+        <label>
+            <input id="reset-username" class="txtb" type="text" name="" placeholder="用户名"/>
+
+        </label>
+        <label>
+            <input id="reset-newpassword" class="txtb" type="password" name="" placeholder="新密码"/>
+        </label>
+        <label>
+            <input id="reset-newpassword-sure"class="txtb" type="password" name="" placeholder="再次输入新密码"/>
+        </label>
+        <label>
+            <input id="reset-securitycode" class="txtb" type="text" name="" placeholder="安全码"/>
+        </label>
+        <button id="reset-btn" class="reset-btn" type="button">重置密码</button>
+    </form>
+</div>
+
+
+<script>
+    const loginBox = document.getElementsByClassName('login-box');
+    const registerBox = document.getElementsByClassName('register-box');
+    const resetBox = document.getElementsByClassName('reset-box');
+    const showloginBtn = document.getElementsByClassName('show-login-btn');
+    const showresetBtn = document.getElementsByClassName('show-reset-btn');
+    const showregisterBtn = document.getElementsByClassName('show-register-btn');
+    const hideloginBtn = document.getElementsByClassName('hide-login-btn');
+    const hideresetBtn = document.getElementsByClassName('hide-reset-btn');
+    const hideregisterBtn = document.getElementsByClassName('hide-register-btn');
+
+
+    showloginBtn[0].addEventListener('click', function () {
+        toggleClass(loginBox[0], 'showed')
+    })
+    showresetBtn[0].addEventListener('click', function () {
+        toggleClass(resetBox[0], 'showed')
+    })
+    showregisterBtn[0].addEventListener('click', function () {
+        toggleClass(registerBox[0], 'showed')
+    })
+    hideloginBtn[0].addEventListener('click', function () {
+        toggleClass(loginBox[0], 'showed')
+    })
+    hideresetBtn[0].addEventListener('click', function () {
+        toggleClass(resetBox[0], 'showed')
+    })
+    hideregisterBtn[0].addEventListener('click', function () {
+        toggleClass(registerBox[0], 'showed')
+    })
+
+    function hasClass(element, clssname) {
+        return element.className.match(new RegExp('(\\s|^)' + clssname + '(\\s|$)'))
+    }
+
+    function addClass(element, clssname) {
+        if (!this.hasClass(element, clssname)) element.className += ' ' + clssname
+    }
+
+    function removeClass(element, clssname) {
+        if (hasClass(element, clssname)) {
+            var reg = new RegExp('(\\s|^)' + clssname + '(\\s|$)')
+            element.className = element.className.replace(reg, ' ')
+        }
+    }
+
+    function toggleClass(element, clssname) {
+        if (hasClass(element, clssname)) {
+            removeClass(element, clssname)
+        } else {
+            addClass(element, clssname)
+        }
+    }
+
+
+</script>
+
+
+<script src="js/user_Datasend.js"></script>
+
+</body>
+
+</html>
